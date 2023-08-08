@@ -1,4 +1,4 @@
-# verifier DApp
+# Verifier DApp
 
 ```
 This works for Cartesi Rollups version 0.9.x
