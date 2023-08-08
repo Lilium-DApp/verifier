@@ -139,13 +139,19 @@ Notice that the "address" and "payload" translates to "to" and "data" (But remem
 Deploying the application to a blockchain requires creating a smart contract on that network, as well as running a validator node for the DApp.
 Refer to [rollups-examples deploying dapps](https://github.com/cartesi/rollups-examples#deploying-dapps).
 
-The first step is to build the DApp's back-end machine, which will produce a hash that serves as a unique identifier.
+The first step is to set the deployment parameters in the environment variables, creating an env.testnet file using the following code to add whatever is necessary:
+
+```shell
+make env
+```
+
+Next, we should build the DApp's back-end machine, which will produce a hash that serves as a unique identifier:
 
 ```shell
 docker buildx bake -f docker-bake.hcl -f docker-bake.override.hcl machine --load
 ```
 
-Once the machine docker image is ready, we can use it to deploy a corresponding Rollups smart contract. This requires you to define a few environment variables to specify which network you are deploying to, which account to use, and which RPC gateway to use when submitting the deploy transaction. We suggest that you add the variables in the env.testnet file 
+Once the machine docker image is ready, we can use it to deploy a corresponding Rollups smart contract. This requires you to define a few environment variables to specify which network you are deploying to, which account to use, and which RPC gateway to use when submitting the deploy transaction. We suggest that you add the variables in the env.testnet file.
 
 ```bash
 NETWORK=<network>
