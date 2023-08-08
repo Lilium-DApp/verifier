@@ -163,20 +163,20 @@ WSS_URL=<wss://your.wss.gateway>
 With that in place, you can submit a deploy transaction to the Cartesi DApp Factory contract on the target network by executing the following command:
 
 ```shell
-DAPP_NAME=verifier docker compose --env-file ./env.testnet -f ./deploy-testnet.yml up
+docker compose --env-file ./env.testnet -f ./deploy-testnet.yml up
 ```
 
 This will create a file at `./deployments/<network>/verifier.json` with the deployed contract's address.
 Once the command finishes, it is advisable to stop the docker compose and remove the volumes created when executing it.
 
 ```shell
-DAPP_NAME=verifier docker compose --env-file ./env.testnet -f ./deploy-testnet.yml down -v
+docker compose --env-file ./env.testnet -f ./deploy-testnet.yml down -v
 ```
 
 After that, a corresponding Cartesi Validator Node must also be instantiated in order to interact with the deployed smart contract on the target network and handle the back-end logic of the DApp. The node itself can be started by running a docker compose as follows:
 
 ```shell
-DAPP_NAME=verifier docker compose -f ./docker-compose-testnet.yml -f ./docker-compose.override.yml up
+docker compose --env-file ./env.testnet -f ./docker-compose-testnet.yml -f ./docker-compose.override.yml up
 ```
 
 ## Interacting with the deployed application
