@@ -154,10 +154,9 @@ docker buildx bake -f docker-bake.hcl -f docker-bake.override.hcl machine --load
 Once the machine docker image is ready, we can use it to deploy a corresponding Rollups smart contract. This requires you to define a few environment variables to specify which network you are deploying to, which account to use, and which RPC gateway to use when submitting the deploy transaction. We suggest that you add the variables in the env.testnet file.
 
 ```bash
-NETWORK=<network>
 MNEMONIC=<user sequence of twelve words>
-RPC_URL=<https://your.rpc.gateway>
-WSS_URL=<wss://your.wss.gateway>
+RPC_URL=https://eth-goerli.alchemyapi.io/v2/<USER_KEY>
+WSS_URL=wss://eth-goerli.alchemyapi.io/v2/<USER_KEY>
 ```
 
 With that in place, you can submit a deploy transaction to the Cartesi DApp Factory contract on the target network by executing the following command:
