@@ -11,6 +11,7 @@ RUN apt-get update \
     && find /var/log \( -name '*.log' -o -name '*.log.*' \) -exec truncate -s 0 {} \;
 
 RUN python -m venv /opt/venv
+
 ENV PATH="/opt/venv/bin:$PATH"
 
 COPY dapp/requirements.txt .
@@ -18,13 +19,10 @@ COPY dapp/requirements.txt .
 RUN pip install -r requirements.txt --no-cache \
     && find /opt/venv -type d -name __pycache__ -exec rm -r {} +
 
-
-# runtime stage: produces final image that will be executed
-FROM --platform=linux/riscv64 cartesi/python:3.10-slim-jammy
-
-COPY --from=build-stage /opt/venv /opt/venv
-
 WORKDIR /opt/cartesi/dapp
+
 COPY dapp/networks.json .
+
 COPY dapp/entrypoint.sh .
+
 COPY dapp/verifier.py .
