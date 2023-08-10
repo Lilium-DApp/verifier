@@ -21,8 +21,4 @@ RUN pip install -r requirements.txt --no-cache \
 
 WORKDIR /opt/cartesi/dapp
 
-COPY dapp/networks.json .
-
-COPY dapp/entrypoint.sh .
-
-COPY dapp/verifier.py .
+COPY /dapp .

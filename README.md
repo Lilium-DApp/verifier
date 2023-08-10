@@ -186,7 +186,7 @@ This time, however, you need to specify the appropriate connectivity configurati
 As you defined several variables in env.testnet, you can the file to load the variables
 
 ```shell
-$(cat env.testnet | xargs) && yarn start input send --payload "Hello there" --addressFile path/to/verifier/deployments/<network>/verifier.json
+$(cat env.testnet | xargs) && yarn start input send --payload "Hello there" --addressFile path/to/verifier/deployments/sepolia/verifier.json
 ```
 
 Resulting vouchers can then be retrieved by querying the local Cartesi Node, as before:
