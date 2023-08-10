@@ -89,6 +89,7 @@ def handle_advance(data):
         f"Received advance request data {data}. Current rollup_address: {rollup_address}")
     try:
         payload = data["payload"]
+        voucher = None
         try:
             process_input_and_generate_verifier_voucher(
                 data['metadata']['msg_sender'], payload)
@@ -98,6 +99,11 @@ def handle_advance(data):
         if data['metadata']['msg_sender'] == DAPP_RELAY_ADDRESS:
             rollup_address = payload
             ROLLUP_CLIENT.send_notice({"payload": rollup_address})
+
+        if voucher:
+            LOGGER.info(f"voucher {voucher}")
+            ROLLUP_CLIENT.send_voucher(voucher)
+
         return "accept"
 
     except Exception as e:
