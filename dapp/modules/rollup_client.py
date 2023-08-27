@@ -1,4 +1,3 @@
-from modules import Convertions
 import logging
 import requests
 
@@ -14,15 +13,15 @@ class RollupClient:
         self.logger.info(
             f"/{endpoint}: Received response status {response.status_code} body {response.content}")
 
-    def send_notice(self, notice) -> None:
+    def send_notice(self, notice: str) -> None:
         self.send_post("notice", notice)
 
-    def send_report(self, report) -> None:
+    def send_report(self, report: str) -> None:
         self.send_post("report", report)
 
-    def send_voucher(self, voucher) -> None:
+    def send_voucher(self, voucher: str) -> None:
         self.send_post("voucher", voucher)
 
-    def reject_input(self, input_data) -> None:
-        self.send_report({"payload": Convertions.str2hex(input_data)})
+    def reject_input(self, input_data: hex) -> None:
+        self.send_report({"payload": input_data})
         return "reject"

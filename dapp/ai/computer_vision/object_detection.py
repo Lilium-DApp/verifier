@@ -9,7 +9,6 @@ import tflite_runtime.interpreter as tflite
 
 class ImageVerifier:
     def __init__(self, model_path):
-        self.model_path = model_path
         self.interpreter = tflite.Interpreter(model_path=model_path)
         self.interpreter.allocate_tensors()
         self.input_details = self.interpreter.get_input_details()
