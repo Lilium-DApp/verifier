@@ -16,17 +16,20 @@ services:
       [
         "create",
         "--rpc",
-        "${RPC_URL:?undefined RPC_URL}",
+        "${HARDHAT_RPC_URL:?undefined _HARDHAT_RPC_URL}",
+        "--deploymentFile",
+        "/localhost/localhost.json",
         "--mnemonic",
-        "${MNEMONIC:?undefined MNEMONIC}",
+        "${HARDHAT_MNEMONIC_PHRASE:?undefined HARDHAT_MNEMONIC_PHRASE}",
         "--templateHashFile",
-        "/var/opt/cartesi/machine-snapshots/latest/hash",
+        "/var/opt/cartesi/machine-snapshots/0_0/hash",
         "--outputFile",
-        "/deployments/${NETWORK:?undefined NETWORK}/${DAPP_NAME:?undefined DAPP_NAME}.json",
+        "/deployments/localhost/dapp.json"
       ]
     volumes:
       - machine:/var/opt/cartesi/machine-snapshots:ro
       - ./deployments:/deployments
+      - ./localhost:/localhost
 
 volumes:
   machine: {}

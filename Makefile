@@ -1,2 +1,2 @@
 env: env.tmpl
-	cp env.tmpl env.testnet
+	cp env.tmpl env
