@@ -162,7 +162,7 @@ WSS_URL=wss://eth-goerli.alchemyapi.io/v2/<USER_KEY>
 With that in place, you can submit a deploy transaction to the Cartesi DApp Factory contract on the target network by executing the following command:
 
 ```shell
-docker compose --env-file .env -f ./deploy-testnet.yml up
+docker compose --env-file ./env.testnet -f ./deploy-testnet.yml up
 ```
 
 This will create a file at `./deployments/<network>/verifier.json` with the deployed contract's address.
