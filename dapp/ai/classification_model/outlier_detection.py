@@ -2,9 +2,8 @@ import joblib
 
 
 class GaussianEnvelopPredictor:
-    def __init__(self):
-        self.path = "./ai/classification_model/model/gaussian_envelop.sav"
-        self.model = joblib.load(self.path)
+    def __init__(self, model_path):
+        self.model = joblib.load(model_path)
 
     def predict(self, features):
         """
