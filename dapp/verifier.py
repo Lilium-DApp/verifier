@@ -25,7 +25,7 @@ w3 = web3.Web3()
 networks = json.load(open("networks.json"))
 
 GAUSSIAN_ENVELOP = GaussianEnvelopPredictor("./ai/classification_model/model/gaussian_envelop.sav")
-IMAGE_VERIFIER = ImageVerifier("./ai/computer_vision/model/object.tflite")
+IMAGE_VERIFIER = ImageVerifier("./ai/computer_vision/model/best_float32.tflite")
 
 ROLLUP_SERVER = environ["ROLLUP_HTTP_SERVER_URL"]
 LOGGER.info(f"HTTP ROLLUP_SERVER url is {ROLLUP_SERVER}")
