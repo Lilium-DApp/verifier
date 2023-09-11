@@ -11,8 +11,9 @@ __pycache__/
 *.so
 
 Tree-6
-yolov8n.pt
-yolov8n.onnx
+yolov8*.pt
+imgsz=640
+format=tflite
 
 # Distribution / packaging
 .Python
