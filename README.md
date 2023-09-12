@@ -84,11 +84,11 @@ The first step is to set the deployment parameters in the environment variables,
 
 
 ```shell
-docker buildx bake -f docker-bake.hcl -f docker-bake.override.hcl --load --set ".args.NETWORK=<testnet>"
+docker buildx bake -f docker-bake.hcl -f docker-bake.override.hcl --load --set "*.args NETWORK=sepolia"
 ```
 
 ```shell
-docker buildx bake -f docker-bake.hcl -f docker-bake.override.hcl machine --load --set "*.args.NETWORK=<testnet>"
+docker buildx bake -f docker-bake.hcl -f docker-bake.override.hcl machine --load --set "*.args.NETWORK=sepolia"
 ```
 
 ```shell
