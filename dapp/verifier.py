@@ -182,6 +182,7 @@ def verify_real_world_state(binary) -> bool:
                 logger.info(f"State updated to {STATE}")
                 return True
             else:
+                STATE = REAL_WORLD_STATE.SENSORS_NON_COMPLIANT
                 logger.info("State not compliant")
                 return False
     except Exception as e:
@@ -195,6 +196,7 @@ def verify_real_world_state(binary) -> bool:
 
 def handle_advance(data):
     logger.info(f"Received advance request data {data}.")
+    logger.info(f"Current network is {NETWORK}")
 
     try:
         voucher = None
@@ -240,7 +242,6 @@ def handle_inspect(data):
         logger.error(f"{msg}\n{traceback.format_exc()}")
         send_report({"payload": str2hex(msg)})
         return "reject"
-
 
 handlers = {
     "advance_state": handle_advance,
