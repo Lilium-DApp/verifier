@@ -84,7 +84,7 @@ The first step is to set the deployment parameters in the environment variables,
 
 
 ```shell
-docker buildx bake -f docker-bake.hcl -f docker-bake.override.hcl --load --set "*.args NETWORK=sepolia"
+docker buildx bake -f docker-bake.hcl -f docker-bake.override.hcl --load --set "*.args.NETWORK=sepolia"
 ```
 
 ```shell

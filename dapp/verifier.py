@@ -10,17 +10,15 @@
 # CONDITIONS OF ANY KIND, either express or implied. See the License for the
 # specific language governing permissions and limitations under the License.
 
-import re
 import json
 import web3
 import base64
-from io import BytesIO
 import logging
 import requests
 import traceback
 from enum import Enum
 from os import environ
-from eth_abi import encode
+from io import BytesIO
 from ai import ImageAnalyzer, GaussianEnvelopPredictor
 
 
