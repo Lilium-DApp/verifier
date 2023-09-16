@@ -70,12 +70,14 @@ docker compose --env-file ./env.testnet -f ./docker-compose-testnet.yml -f ./doc
 
 We would like to extend our heartfelt gratitude to a group of outstanding individuals who played a pivotal role in helping us understand the intricacies of the Cartesi environment. Their invaluable assistance has been a beacon of light in this project's journey.
 
-- [**Gabriel Barros**](https://github.com/gbarros): Gabriel, your unparalleled assistance in helping us navigate the complex architecture of the Cartesi platform has been monumental. Your readiness to always address our queries and doubts has not only facilitated a smooth project progression but also enriched our understanding immensely. We cannot thank you enough for the depth of knowledge and clarity you brought to the team.
+- [**Gabriel Barros**](https://github.com/gbarros): Gabriel, your unparalleled assistance in helping us navigate the complex architecture of the Cartesi platform has been monumental. Your readiness to always address our queries and doubts has not only facilitated a smooth project progression but also enriched our understanding immensely. We cannot thank you enough for the depth of knowledge and clarity you brought to the team. 🌟
 
-- [**Felipe Grael**](https://github.com/felipefg): Felipe, your dedicated assistance especially in developing the YOLOv8 model and in porting the cross-compiled libraries to riscv64 has been a cornerstone in the realization of this project. Your technical expertise and commitment were instrumental in overcoming some of the most challenging aspects of this endeavor. Thank you for being a source of guidance and support.
+- [**Felipe Grael**](https://github.com/felipefg): Felipe, your dedicated assistance especially in developing the YOLOv8 model and in porting the cross-compiled libraries to riscv64 has been a cornerstone in the realization of this project. Your technical expertise and commitment were instrumental in overcoming some of the most challenging aspects of this endeavor. Thank you for being a source of guidance and support. 💡
 
-- [**Arthur Vianna**](https://github.com/arthuravianna): Arthur, thank you for your tireless efforts and for always being willing to lend a hand. Your dedication to helping us succeed has not gone unnoticed.
+- [**Arthur Vianna**](https://github.com/arthuravianna): Arthur, thank you for your tireless efforts and for always being willing to lend a hand. Your dedication to helping us succeed has not gone unnoticed. 🙌
 
-- [**Lyno Ferraz**](https://github.com/lynoferraz): Lyno, your technical prowess and assistance have been a fundamental part in this project's success. Thank you for helping us navigate through the complexities of the system.
+- [**Lyno Ferraz**](https://github.com/lynoferraz): Lyno, your technical prowess and assistance have been a fundamental part in this project's success. Thank you for helping us navigate through the complexities of the system. 💪
+
+- **Bruno Maia**: Bruno, your continuous support and encouragement have been an anchor, giving us the motivation and resilience to persevere through the challenges. Your faith in our potential and abilities helped to foster a nurturing environment where we could thrive and excel. Thank you for being a pillar of support and inspiration. 🌱
 
 We sincerely appreciate your time, assistance, and the knowledge you have imparted to us. Here's to more collaborative success in the future! 🎉
