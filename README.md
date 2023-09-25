@@ -20,6 +20,8 @@ Please refer to the [rollups examples requirements](https://github.com/cartesi/r
 
 Follow the steps below to build the application:
 
+⚠️ Before building the application, set up the initial contracts from the [foundry repository](https://github.com/Lilium-DApp/foundry) and change the address in auction/dapp/networks.json.
+
 #### **Step 1:** Execute the following commands to build the application 🛠️:
 
 ```shell
@@ -33,11 +35,11 @@ docker buildx bake -f docker-bake.hcl -f docker-bake.override.hcl machine --load
 #### **Step 2:** Set the deployment parameters in the environment variables, creating an env.testnet file and adding the necessary details 📝:
 
 ```shell
-make env
+$ make env
 ```
 
 ```shell
-source env.testnet
+$ source env.testnet
 ```
 
 #### **Step 3:** With the parameters in place, you can submit a deploy transaction to the Cartesi DApp Factory contract on the target network by executing the following command 💫:
@@ -46,7 +48,7 @@ source env.testnet
 docker compose --env-file ./env.testnet -f ./deploy-testnet.yml up
 ```
 
-📝 **Note:** This will create a file at `./deployments/<network>/verifier.json` with the deployed contract's address. Once the command finishes, it is advisable to stop the docker compose and remove the volumes created when executing it.
+📝 **Note:** This will create a file at `./deployments/<network>/verifier.json` with the deployed contract's address. Once the command finishes, it is advisable to stop the docker compose and remove the volumes created when executing it. After this, you need to inform the company contract about the auction dapp address. To do this, go back to the [foundry repository](https://github.com/Lilium-DApp/foundry).
 
 ```shell
 docker compose --env-file ./env.testnet -f ./deploy-testnet.yml down -v
@@ -55,16 +57,51 @@ docker compose --env-file ./env.testnet -f ./deploy-testnet.yml down -v
 #### **Step 4:** Subsequently, a corresponding Cartesi Validator Node must also be instantiated to interact with the deployed smart contract on the target network and handle the back-end logic of the DApp. The node can be started by running a docker compose as follows 🖥️:
 
 ```shell
-docker compose --env-file ./env.testnet -f ./docker-compose-testnet.yml -f ./docker-compose.override.yml up
+$ docker compose --env-file ./env.testnet -f ./docker-compose-testnet.yml -f ./docker-compose.override.yml up
 ```
 
 #### 🔎 Once you've finished your testing or wish to stop the Verifier DApp, you can stop the Cartesi Validator Node by running the following command:
 
 ```shell
-docker compose --env-file ./env.testnet -f ./docker-compose-testnet.yml -f ./docker-compose.override.yml down -v
+$ docker compose --env-file ./env.testnet -f ./docker-compose-testnet.yml -f ./docker-compose.override.yml down -v
 ```
 
 💼 **Done!** You now have your Verifier DApp ready for testing and experimentation on testnet! 🎉
+
+## Interacting with the Application 💻
+After setting up the initial contracts as described in the [foundry repository](https://github.com/Lilium-DApp/foundry), proceed with the following commands to interact with the Auction DApp:
+
+#### Add device:
+```shell
+$ make device company="<COMPANY_ADDRESS>" CONFIG="--network sepolia"
+```
+
+#### Verifiy Real World State [ Advace State ]:
+- Before doing this, you need to insert the data that will be checked in the .env file 📁. Within the [foundry repository](https://github.com/Lilium-DApp/foundry), there is a file with an example of data with which the Cartesi machine checks the real-world state as sensors compliant 🌐. Just copy from the EXAMPLE.txt file and insert it into the .env in the REAL_WORLD_DATA section 📋.
+
+```bash
+$ make verify company="<COMPANY_ADDRESS>" CONFIG="--network sepolia"
+```
+
+#### See the Verifier state [ Inspect State ]
+
+Enter the frontend console directory:
+```shell
+$ cd frontend-console
+```
+
+Follow the instructions to build the application. After this, check the verifier status with the following command:
+```shell
+$ yarn start inspect --payload "status"
+```
+
+#### See all output images:
+```shell
+$ yarn start notice list
+```
+
+To render the generated base64, simply copy and use this website: https://base64.guru/converter/decode/image
+
 
 ## 🌟 Special Thanks
 
@@ -79,5 +116,7 @@ We would like to extend our heartfelt gratitude to a group of outstanding indivi
 - [**Lyno Ferraz**](https://github.com/lynoferraz): Lyno, your technical prowess and assistance have been a fundamental part in this project's success. Thank you for helping us navigate through the complexities of the system. 💪
 
 - **Bruno Maia**: Bruno, your continuous support and encouragement have been an anchor, giving us the motivation and resilience to persevere through the challenges. Your faith in our potential and abilities helped to foster a nurturing environment where we could thrive and excel. Thank you for being a pillar of support and inspiration. 🌱
+  
+- **Payal Patel**: We would like to express our gratitude to Payal Patel, who embodies Cartesi's commitment to its developer community. Your support and engagement with the community play a crucial role in fostering innovation and collaboration. Thank you for being a beacon of guidance and support for all developers navigating the Cartesi ecosystem. 🙌
 
 We sincerely appreciate your time, assistance, and the knowledge you have imparted to us. Here's to more collaborative success in the future! 🎉
