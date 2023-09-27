@@ -1,14 +1,8 @@
 {
-    "localhost":{
-        "LILIUM_COMPANY_ADDRESS":"0x487c16e3228c9d6be29e4bf400cd21be2e993bbd"
-    },
     "sepolia":{
-        "LILIUM_COMPANY_ADDRESS":"0xD5a08Cc53bE0205323CA83C66C22A13E09b93130"
-    },
-    "zeniq":{
-        "LILIUM_COMPANY_ADDRESS":"0x"
+        "FOREST_RESERVE_ADDRESS":"0xb756A79Ff38E1B7976f0CbEe52873a2f46407cdd"
     },
     "mumbai":{
-        "LILIUM_COMPANY_ADDRESS":"0x"
+        "FOREST_RESERVE_ADDRESS":"0x03E0723D947B0Cc2d6E5224f3Ea2DbDf5A4d9d0E"
     }
 }

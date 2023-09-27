@@ -38,10 +38,6 @@ $ docker buildx bake -f docker-bake.hcl -f docker-bake.override.hcl machine --lo
 $ make env
 ```
 
-```shell
-$ source env.testnet
-```
-
 #### **Step 3:** With the parameters in place, you can submit a deploy transaction to the Cartesi DApp Factory contract on the target network by executing the following command 💫:
 
 ```shell

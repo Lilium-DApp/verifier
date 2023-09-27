@@ -47,7 +47,7 @@ logger.info(f"NETWORK is {NETWORK}")
 
 networks = json.load(open("networks.json"))
 
-LILIUM_COMPANY_ADDRESS = networks[NETWORK]["LILIUM_COMPANY_ADDRESS"].lower()
+FOREST_RESERVE_ADDRESS = networks[NETWORK]["FOREST_RESERVE_ADDRESS"].lower()
 
 w3 = web3.Web3()
 
@@ -117,8 +117,8 @@ INCREASE_ALLOWANCE_FUNCTION_SELECTOR = hex2binary(
 
 
 ###
-def create_verifier_voucher(INCREASE_ALLOWANCE_FUNCTION_SELECTOR, LILIUM_COMPANY_ADDRESS) -> dict:
-    voucher = {"destination": LILIUM_COMPANY_ADDRESS, "payload": binary2hex(
+def create_verifier_voucher(INCREASE_ALLOWANCE_FUNCTION_SELECTOR, FOREST_RESERVE_ADDRESS) -> dict:
+    voucher = {"destination": FOREST_RESERVE_ADDRESS, "payload": binary2hex(
         INCREASE_ALLOWANCE_FUNCTION_SELECTOR)}
     return voucher
 
@@ -202,16 +202,16 @@ def handle_advance(data):
         binary = hex2binary(payload)
         sender = data["metadata"]["msg_sender"]
 
-        if sender == LILIUM_COMPANY_ADDRESS:
+        if sender == FOREST_RESERVE_ADDRESS:
             if verify_real_world_state(binary):
                 voucher = create_verifier_voucher(
-                    INCREASE_ALLOWANCE_FUNCTION_SELECTOR, LILIUM_COMPANY_ADDRESS)
+                    INCREASE_ALLOWANCE_FUNCTION_SELECTOR, FOREST_RESERVE_ADDRESS)
             else:
                 send_report({"payload": str2hex(
                     f"Invalid real world state {binary}")})
         else:
             logger.info(
-                f"sender {sender} is not lilium company address {LILIUM_COMPANY_ADDRESS}")
+                f"sender {sender} is not fores reserve address {FOREST_RESERVE_ADDRESS}")
         if voucher:
             logger.info(f"voucher {voucher}")
             send_voucher(voucher)
