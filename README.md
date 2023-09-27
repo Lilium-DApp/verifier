@@ -25,11 +25,11 @@ Follow the steps below to build the application:
 #### **Step 1:** Execute the following commands to build the application 🛠️:
 
 ```shell
-docker buildx bake -f docker-bake.hcl -f docker-bake.override.hcl --load --set "*.args.NETWORK=<TESTNET_NAME>"
+$ docker buildx bake -f docker-bake.hcl -f docker-bake.override.hcl --load --set "*.args.NETWORK=<TESTNET_NAME>"
 ```
 
 ```shell
-docker buildx bake -f docker-bake.hcl -f docker-bake.override.hcl machine --load --set "*.args.NETWORK=<TESTNET_NAME>"
+$ docker buildx bake -f docker-bake.hcl -f docker-bake.override.hcl machine --load --set "*.args.NETWORK=<TESTNET_NAME>"
 ```
 
 #### **Step 2:** Set the deployment parameters in the environment variables, creating an env.testnet file and adding the necessary details 📝:
@@ -45,13 +45,13 @@ $ source env.testnet
 #### **Step 3:** With the parameters in place, you can submit a deploy transaction to the Cartesi DApp Factory contract on the target network by executing the following command 💫:
 
 ```shell
-docker compose --env-file ./env.testnet -f ./deploy-testnet.yml up
+$ docker compose --env-file ./env.testnet -f ./deploy-testnet.yml up
 ```
 
 📝 **Note:** This will create a file at `./deployments/<network>/verifier.json` with the deployed contract's address. Once the command finishes, it is advisable to stop the docker compose and remove the volumes created when executing it. After this, you need to inform the company contract about the auction dapp address. To do this, go back to the [foundry repository](https://github.com/Lilium-DApp/foundry).
 
 ```shell
-docker compose --env-file ./env.testnet -f ./deploy-testnet.yml down -v
+$ docker compose --env-file ./env.testnet -f ./deploy-testnet.yml down -v
 ```
 
 #### **Step 4:** Subsequently, a corresponding Cartesi Validator Node must also be instantiated to interact with the deployed smart contract on the target network and handle the back-end logic of the DApp. The node can be started by running a docker compose as follows 🖥️:
