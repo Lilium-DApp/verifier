@@ -69,38 +69,11 @@ $ docker compose --env-file ./env.testnet -f ./docker-compose-testnet.yml -f ./d
 💼 **Done!** You now have your Verifier DApp ready for testing and experimentation on testnet! 🎉
 
 ## Interacting with the Application 💻
-After setting up the initial contracts as described in the [foundry repository](https://github.com/Lilium-DApp/foundry), proceed with the following commands to interact with the Auction DApp:
+Access the application frontend: [LIVE FRONTEND](https://github.com/Lilium-DApp/foundry)
 
-#### Add device:
-```shell
-$ make device company="<COMPANY_ADDRESS>" CONFIG="--network sepolia"
-```
+## ⚠️ Disclaimer
 
-#### Verifiy Real World State [ Advace State ]:
-- Before doing this, you need to insert the data that will be checked in the .env file 📁. Within the [foundry repository](https://github.com/Lilium-DApp/foundry), there is a file with an example of data with which the Cartesi machine checks the real-world state as sensors compliant 🌐. Just copy from the EXAMPLE.txt file and insert it into the .env in the REAL_WORLD_DATA section 📋.
-
-```bash
-$ make verify company="<COMPANY_ADDRESS>" CONFIG="--network sepolia"
-```
-
-#### See the Verifier state [ Inspect State ]
-
-Enter the frontend console directory:
-```shell
-$ cd frontend-console
-```
-
-Follow the instructions to build the application. After this, check the verifier status with the following command:
-```shell
-$ yarn start inspect --payload "status"
-```
-
-#### See all output images:
-```shell
-$ yarn start notice list
-```
-
-To render the generated base64, simply copy and use this website: https://base64.guru/converter/decode/image
+This repository is in development and not ready for production use. The code and documentation are provided as-is, and may contain bugs or other issues. Please thoroughly test and review the code before considering it for use in a production environment. The maintainers of this repository are not responsible for any issues or damages that may occur from using the code in a production environment.
 
 
 ## 🌟 Special Thanks
