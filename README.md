@@ -22,7 +22,7 @@ Follow the steps below to build the application:
 
 #### **Step 1:** Execute the following commands to build the application 🛠️:
 
-***⚠️ If you are using a shell like bash, please run the commands below without the quotes in "*.args.NETWORK=<TESTNET_NAME>".***
+***⚠️ If you are using a shell like bash, please run the commands below without the quotes in ```"*.args.NETWORK=<TESTNET_NAME>"```***
 
 ```shell
 $ docker buildx bake -f docker-bake.hcl -f docker-bake.override.hcl --load --set "*.args.NETWORK=<TESTNET_NAME>"
