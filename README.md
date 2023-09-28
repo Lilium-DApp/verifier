@@ -73,6 +73,8 @@ This repository is in development and not ready for production use. The code and
 
 ## 🚀 Running a node from an already deployed DApp:
 
+- This will use the existing address in the path: `./deployments/sepolia/verifier.json`
+
 ```bash
 $ docker compose --env-file ./env.testnet -f ./docker-compose-testnet.yml -f ./docker-compose.override-sepolia.yml up
 ```
