@@ -20,9 +20,9 @@ Please refer to the [rollups examples requirements](https://github.com/cartesi/r
 
 Follow the steps below to build the application:
 
-⚠️ Before building the application, set up the initial contracts from the [foundry repository](https://github.com/Lilium-DApp/foundry) and change the address in auction/dapp/networks.json.
-
 #### **Step 1:** Execute the following commands to build the application 🛠️:
+
+⚠️ If you are using a shell like bash, please run the commands below without the quotes in "*.args.NETWORK=<TESTNET_NAME>".
 
 ```shell
 $ docker buildx bake -f docker-bake.hcl -f docker-bake.override.hcl --load --set "*.args.NETWORK=<TESTNET_NAME>"
@@ -65,11 +65,13 @@ $ docker compose --env-file ./env.testnet -f ./docker-compose-testnet.yml -f ./d
 💼 **Done!** You now have your Verifier DApp ready for testing and experimentation on testnet! 🎉
 
 ## Interacting with the Application 💻
-Access the application frontend: [LIVE FRONTEND](https://github.com/Lilium-DApp/foundry)
+
+Access the application frontend 🌐: 
+
+### [***Lilium WEBAPP***](https://frontend-orcin-psi.vercel.app/)
 
 ## ⚠️ Disclaimer
-
-This repository is in development and not ready for production use. The code and documentation are provided as-is, and may contain bugs or other issues. Please thoroughly test and review the code before considering it for use in a production environment. The maintainers of this repository are not responsible for any issues or damages that may occur from using the code in a production environment.
+*** This repository is in development and not ready for production use. The code and documentation are provided as-is, and may contain bugs or other issues. Please thoroughly test and review the code before considering it for use in a production environment. The maintainers of this repository are not responsible for any issues or damages that may occur from using the code in a production environment.***
 
 ## 🚀 Running a node from an already deployed DApp:
 
@@ -78,7 +80,6 @@ This repository is in development and not ready for production use. The code and
 ```bash
 $ docker compose --env-file ./env.testnet -f ./docker-compose-testnet.yml -f ./docker-compose.override-sepolia.yml up
 ```
-
 
 ## 🌟 Special Thanks
 
