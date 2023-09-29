@@ -44,7 +44,7 @@ $ make env
 $ docker compose --env-file ./env.testnet -f ./deploy-testnet.yml up
 ```
 
-📝 **Note:** This will create a file at `./deployments/<network>/verifier.json` with the deployed contract's address. Once the command finishes, it is advisable to stop the docker compose and remove the volumes created when executing it. After this, you need to inform the company contract about the auction dapp address. To do this, go back to the [foundry repository](https://github.com/Lilium-DApp/foundry).
+📝 **Note:** This will create a file at `./deployments/<network>/verifier.json` with the deployed contract's address. Once the command finishes, it is advisable to stop the docker compose and remove the volumes created when executing it:
 
 ```shell
 $ docker compose --env-file ./env.testnet -f ./deploy-testnet.yml down -v
