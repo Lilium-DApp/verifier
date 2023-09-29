@@ -49,8 +49,9 @@ $ docker compose --env-file ./env.testnet -f ./deploy-testnet.yml up
 ```shell
 $ docker compose --env-file ./env.testnet -f ./deploy-testnet.yml down -v
 ```
+## 🚀 Running a validator node:
 
-#### **Step 4:** Subsequently, a corresponding Cartesi Validator Node must also be instantiated to interact with the deployed smart contract on the target network and handle the back-end logic of the DApp. The node can be started by running a docker compose as follows 🖥️:
+Subsequently, a corresponding Cartesi Validator Node must also be instantiated to interact with the deployed smart contract on the target network and handle the back-end logic of the DApp. The node can be started by running a docker compose as follows 🖥️:
 
 ```shell
 $ docker compose --env-file ./env.testnet -f ./docker-compose-testnet.yml -f ./docker-compose.override.yml up
