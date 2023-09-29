@@ -18,7 +18,7 @@ Please refer to the [rollups examples requirements](https://github.com/cartesi/r
 
 ## 🚀 Building and deploying the Application on Testnet
 
-Follow the steps below to build the application:
+Follow the steps below to build the application after cloning this repo:
 
 #### **Step 1:** Execute the following commands to build the application 🛠️:
 
