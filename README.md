@@ -68,7 +68,7 @@ $ docker compose --env-file ./env.testnet -f ./docker-compose-testnet.yml -f ./d
 
 Access the application frontend 🌐: 
 
-### [***Lilium WEBAPP***](https://frontend-orcin-psi.vercel.app/)
+### <a href="https://frontend-orcin-psi.vercel.app/" target="_blank">***Lilium WEBAPP***</a>
 
 ## ⚠️ Disclaimer
 
